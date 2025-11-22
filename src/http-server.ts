@@ -41,7 +41,7 @@ app.post("/ask-openai", async (req, res) => {
       }),
     });
 
-    const data = await openaiRes.json();
+    const data: any = await openaiRes.json(); // <-- FIX: typed as any
 
     if (!openaiRes.ok) {
       console.error("OpenAI API error:", openaiRes.status, data);
